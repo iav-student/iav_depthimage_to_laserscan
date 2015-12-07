@@ -1,0 +1,28 @@
+<package>
+  <name>iav_depthimage_to_laserscan</name>
+  <version>1.0.0</version>
+  <description>depthimage_to_laserscan</description>
+  <maintainer email="jan.obermueller@iav.de">Jan Obermueller</maintainer>
+
+  <license>BSD</license>
+
+  <author>Jan Obermueller</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>gtest</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>image_geometry</build_depend>
+  <build_depend>roscpp_serialization</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>image_geometry</run_depend>
+  <run_depend>roscpp_serialization</run_depend>
+
+</package>
