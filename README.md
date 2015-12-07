@@ -1,7 +1,5 @@
 # iav_depthimage_to_laserscan
 
-=====================================================================
-
 ROS node that convert a depth image to a laser scan for use with navigation and localization. Furthermore, it allows the use for one camera or more
 (launch example for two cameras Asus Xtion Pro Live) and generates only one general laser scan for all of them, i.e. it allows create a 360° laser scan 
 with using up to two cameras. For this just add one subscriber (with callback) and one variable Param (the parameters of the new camera) for each camera. 
