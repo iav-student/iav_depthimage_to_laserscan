@@ -1,0 +1,52 @@
+<launch>
+
+	<!-- Have to be modified -->
+	<include file="$(find openni2_launch)/launch/openni2_CamID389.launch"/>
+	<include file="$(find openni2_launch)/launch/openni2_CamID568.launch"/>
+
+	<node pkg="tf" type="static_transform_publisher" name="base_laser_broadcaster" args="0 0 0.75 0 0 0 base_link laser_link 100" />  <!--x y z tx ty tz-->
+
+	<node name="Ausgabe" pkg="rviz" type="rviz" args="-d $(find iav_depthimage_to_laserscan)/config/test.rviz"></node>
+	 
+	<node pkg="iav_depthimage_to_laserscan" type="iav_depthimage_to_laserscan" name="iav_depthimage_to_laserscan">
+ 		
+		<!-- Have to be modified -->
+		<remap from="image" to="/camera389/depth/image_raw"/>
+		<remap from="image2" to="/camera568/depth/image_raw"/>
+		<remap from="Laser_Scan" to="Laserscan"/>
+		
+		<param name="height_max"  type="double"  value="0.25"/>
+		<param name="height_min"  type="double"  value="-0.65"/>
+
+		<param name="camera_1_AOV_h"  type="double"  value="1.01229097"/>
+		<param name="camera_1_AOV_v"  type="double"  value="0.785398163"/>
+		<param name="camera_1_yaw"  type="double"  value="0.0"/>
+		<param name="camera_1_pitch"  type="double"  value="0.0"/>
+		<param name="camera_1_offset"  type="double"  value="0.0"/>
+		<param name="camera_1_image_width"  type="int"  value="640"/>
+		<param name="camera_1_image_height"  type="int"  value="480"/>
+		<param name="cam_1_focal_length_x"  type="double"  value="570"/>
+		<param name="cam_1_focal_length_y"  type="double"  value="570"/>
+		<param name="cam_1_frame_id"  type="string"  value="camera389_link"/>
+
+		<param name="camera_2_AOV_h"  type="double"  value="1.01229097"/>
+		<param name="camera_2_AOV_v"  type="double"  value="0.785398163"/>
+		<param name="camera_2_yaw"  type="double"  value="1.009744261"/>
+		<param name="camera_2_pitch"  type="double"  value="0.0"/>
+		<param name="camera_2_offset"  type="double"  value="0.0"/>
+		<param name="camera_2_image_width"  type="int"  value="640"/>
+		<param name="camera_2_image_height"  type="int"  value="480"/>
+		<param name="cam_2_focal_length_x"  type="double"  value="570"/>
+		<param name="cam_2_focal_length_y"  type="double"  value="570"/>
+		<param name="cam_2_frame_id"  type="string"  value="camera568_link"/>
+
+		<param name="laser_max_range"  type="double"  value="5.0"/>
+		<param name="laser_min_range"  type="double"  value="0.5"/>
+		<param name="laser_max_angle"  type="double"  value="3.14"/>
+		<param name="laser_min_angle"  type="double"  value="-3.14"/>
+		<param name="laser_rays"  type="int"  value="640"/>
+		<param name="laser_output_frame_id"  type="string"  value="laser_link"/>
+
+	</node> 
+
+</launch>
