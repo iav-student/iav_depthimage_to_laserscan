@@ -1,6 +1,5 @@
 # iav_depthimage_to_laserscan
 
-iav_depthimage_to_laserscan ROS package
 =====================================================================
 
 ROS node that convert a depth image to a laser scan for use with navigation and localization. Furthermore, it allows the use for one camera or more
@@ -19,7 +18,7 @@ How to build iav_depthimage_to_laserscan ros package
 
 How to run iav_depthimage_to_laserscan ros package
 =====================================================================
-roslaunch iav_depthimage_to_laserscan itl_test.launch
+    roslaunch iav_depthimage_to_laserscan itl_test.launch
 
 You should see the scan result in the rviz.
 
