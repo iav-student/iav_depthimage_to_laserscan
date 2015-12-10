@@ -5,6 +5,9 @@
   <maintainer email="jan.obermueller@iav.de">Jan Obermueller</maintainer>
 
   <license>BSD</license>
+  
+  <url type="website">http://ros.org/wiki/iav_depthimage_to_laserscan</url>
+  <url type="repository">https://github.com/iav-student/iav_depthimage_to_laserscan</url>
 
   <author>Jan Obermueller</author>
 
